@@ -1,10 +1,13 @@
 # Image-Caption-Generation-using-Gemini
 we generate captions to the images which are given by user(user input) using prompt engineering and Generative AI
+# zero shot prompting
+We use Zero-shot prompting technique in developing the prompt to generate image captions
 # Vision Models
 Vision models can look at pictures and then tell you what's in them using words. These are called vision-to-text models. They bring together the power of understanding images and language. Using fancy neural networks, these models can look at pictures and describe them in a way that makes sense. They're like a bridge between what you see and what you can read.
 
 This is super useful for things like making captions for images, helping people who can't see well understand what's in a picture, and organizing information. As these models get even smarter, they're going to make computers even better at understanding and talking about what they "see" in pictures. It's like teaching computers to understand and describe the visual world around us.![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/b8b48459-ecfb-42eb-b379-e82543a8334f)
 Based on which model we are using like OPENAI,GEMINI(sub models),Anthropic we use respective API KEY and also we use endpoint if necessary 
+➡️Generative model (predefined function) may play a key role in the whole process of development.
 # Gemini compared to other Foundation Models
 Evidence suggests Gemini represents the state-of-the-art in foundation models:
 
