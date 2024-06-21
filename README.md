@@ -9,7 +9,7 @@ This is super useful for things like making captions for images, helping people 
 Based on which model we are using like OPENAI,GEMINI(sub models),Anthropic we use respective API KEY and also we use endpoint if necessary 
 
 ➡️Generative model (predefined function) may play a key role in the whole process of development.
-# Gemini compared to other Foundation Models
+# Gemini compared to other Models
 Evidence suggests Gemini represents the state-of-the-art in foundation models:
 
 It achieves record-breaking results on over 56 benchmarks spanning text, code, math, visual, and audio understanding. This includes benchmarks like MMLU, GSM8K, MATH, Big-Bench Hard, HumanEval, Natural2Code, DROP, and WMT23.
