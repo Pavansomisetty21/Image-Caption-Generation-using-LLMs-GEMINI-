@@ -26,10 +26,10 @@ Google does not disclose details of Gemini architecture. But some multi-modal ar
 The CLIP architecture(https://openai.com/research/clip), introduced in 2021, uses contrastive learning between images with textual representations, with some distance function like cosine similarity to align the embedding spaces.
 ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/936ee54f-8143-4971-ae23-c75625ee545f)
 
-➡️Flamingo(https://arxiv.org/abs/2204.14198) uses a vision encoder pre-trained using CLIP and a Chinchilla(https://arxiv.org/abs/2203.15556) pre-trained language model to represent the text. It introduces some special components — the Perceiver Resampler and a special Gated cross-attention — to combine those interleaved multi-modal representations, and is trained to predict next tokens. Flamingo can perform visual question answering or conversations around that content.
+➡️[Flamingo](https://arxiv.org/abs/2204.14198) uses a vision encoder pre-trained using CLIP and a Chinchilla(https://arxiv.org/abs/2203.15556) pre-trained language model to represent the text. It introduces some special components — the Perceiver Resampler and a special Gated cross-attention — to combine those interleaved multi-modal representations, and is trained to predict next tokens. Flamingo can perform visual question answering or conversations around that content.
 ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/99b19882-8e9f-4ee7-abbf-cdfae495f99c)
 The above diagram represents that examples of visual dialogue from Flamingo paper
 
-➡️BLIP-2 (https://arxiv.org/abs/2301.12597) also uses pre-trained image and LLM encoders, connected by a Q-Former component. The model is trained for multiple tasks: matching images and text representations with both constrastive learning (like CLIP) and with binary classification task. It is also trained on images caption generation.
+➡️[BLIP-2](https://arxiv.org/abs/2301.12597) also uses pre-trained image and LLM encoders, connected by a Q-Former component. The model is trained for multiple tasks: matching images and text representations with both constrastive learning (like CLIP) and with binary classification task. It is also trained on images caption generation.
 The illustration for this paper will be as ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/73ac1ea8-9778-48e6-8f8d-f0c3516f5afe)
 
