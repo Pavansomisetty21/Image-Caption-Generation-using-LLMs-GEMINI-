@@ -65,18 +65,25 @@ Connecting Vision and Language Via VLMs
 Vision-Language Models (VLMs) are designed to understand and generate content that combines both visual and textual data. To effectively integrate these two distinct modalities—vision and language—VLMs use specialized mechanisms, such as adapters and linear layers.
 This section details popular building blocks that various VLMs utilize to link visual and language input. Let’s delve into how these components work in the context of VLMs.
 Adapters/MLPs/Fully Connected Layers in VLMs
-Purpose of Adapters: Adapters are small neural network modules inserted into pre-existing models. In the context of VLMs, they facilitate the integration of visual and textual data by transforming the representations from one modality to be compatible with the other.
+Purpose of Adapters: 
+      Adapters are small neural network modules inserted into pre-existing models. In the context of VLMs, they facilitate the integration of visual and textual data by transforming the representations from one modality to be compatible with the other.
 
-Functioning: Adapters typically consist of a few fully connected layers (put simply, a Multi-Layer Perceptron). They take the output from one type of encoder (say, a vision encoder) and transform it into a format that is suitable for processing by another type of encoder or decoder (like a language model).
+Functioning:
+      Adapters typically consist of a few fully connected layers (put simply, a Multi-Layer Perceptron). They take the output from one type of encoder (say, a vision encoder) and transform it into a format that is suitable for processing by another type of encoder or decoder (like a language model).
 
-Role of Linear Layers: Linear layers, or fully connected layers, are a fundamental component in neural networks. In VLMs, they are crucial for processing the output of vision encoders.
+Role of Linear Layers:
+      Linear layers, or fully connected layers, are a fundamental component in neural networks. In VLMs, they are crucial for processing the output of vision encoders.
 
-Processing Vision Encoder Output: After an image is processed through a vision encoder (like a CNN or a transformer-based vision model), the resulting feature representation needs to be adapted to be useful for language tasks. Linear layers can transform these vision features into a format that is compatible with the text modality.
+Processing Vision Encoder Output:
+      After an image is processed through a vision encoder (like a CNN or a transformer-based vision model), the resulting feature representation needs to be adapted to be useful for language tasks. Linear layers can transform these vision features into a format that is compatible with the text modality.
 
-Combining Modalities: In a VLM, after processing through adapters and linear layers, the transformed visual data can be combined with textual data. This combination typically occurs before or within the language model, allowing the VLM to generate responses or analyses that incorporate both visual and textual understanding.
+Combining Modalities: 
+      In a VLM, after processing through adapters and linear layers, the transformed visual data can be combined with textual data. This combination typically occurs before or within the language model, allowing the VLM to generate responses or analyses that incorporate both visual and textual understanding.
 
-End-to-End Training: In some advanced VLMs, the entire model, including vision encoders, linear layers, and language models, can be trained end-to-end. This approach allows the model to better learn how to integrate and interpret both visual and textual information.
+End-to-End Training: 
+      In some advanced VLMs, the entire model, including vision encoders, linear layers, and language models, can be trained end-to-end. This approach allows the model to better learn how to integrate and interpret both visual and textual information.
 
-Flexibility: Adapters offer flexibility in model training. They allow for fine-tuning a pre-trained model on a specific task without the need to retrain the entire model. This is particularly useful in VLMs where training from scratch is often computationally expensive.
+Flexibility:
+      Adapters offer flexibility in model training. They allow for fine-tuning a pre-trained model on a specific task without the need to retrain the entire model. This is particularly useful in VLMs where training from scratch is often computationally expensive.
 
 In summary, adapters and linear layers in VLMs serve as critical components for bridging the gap between visual and textual modalities, enabling these models to perform tasks that require an understanding of both images and text.
