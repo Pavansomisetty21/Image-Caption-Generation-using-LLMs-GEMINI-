@@ -47,43 +47,82 @@ Architecture: A BERT-like model that processes both visual and textual informati
 Fusion Strategy: Intermediate fusion with cross-modal attention mechanisms.
 Alignment Method: Aligns text and image features using attention within a transformer framework.
 # LXMERT (Learning Cross-Modality Encoder Representations from Transformers):
-Architecture: Specifically designed for vision-and-language tasks, uses separate encoders for language and vision, followed by a cross-modality encoder.
-Fusion Strategy: Intermediate fusion with a dedicated cross-modal encoder.
-Alignment Method: Employs cross-modal attention between language and vision encoders.
-VLM: Differences from Large Language Models (LLMs)
+Architecture:
+
+Specifically designed for vision-and-language tasks, uses separate encoders for language and vision, followed by a cross-modality encoder.
+Fusion Strategy: 
+
+Intermediate fusion with a dedicated cross-modal encoder.
+Alignment Method: 
+
+Employs cross-modal attention between language and vision encoders.
+# VLM: Differences from Large Language Models (LLMs)
+
+
 Input Modalities:
+
 VLMs: Handle both visual (images) and textual (language) inputs.
 LLMs: Primarily focused on processing and generating textual content.
+
 Task Versatility:
+
 VLMs: Capable of tasks that require understanding and correlating information from both visual and textual data, like image captioning, visual storytelling, etc.
 LLMs: Specialize in tasks that involve only text, such as language translation, text generation, question answering purely based on text, etc.
 Complexity in Integration: VLMs involve a more complex architecture due to the need to integrate and correlate information from two different modalities (visual and textual), whereas LLMs deal with a single modality.
 
-Use Cases: VLMs are particularly useful in scenarios where both visual and textual understanding is crucial, such as in social media analysis, where both image and text content are prevalent. LLMs are more focused on applications like text summarization, chatbots, and content creation where the primary medium is text.
+Use Cases:
+
+VLMs are particularly useful in scenarios where both visual and textual understanding is crucial, such as in social media analysis, where both image and text content are prevalent. LLMs are more focused on applications like text summarization, chatbots, and content creation where the primary medium is text.
 In summary, while both VLMs and LLMs are advanced AI models leveraging deep learning, VLMs stand out for their ability to understand and synthesize information from both visual and textual data, offering a broader range of applications that require multimodal understanding.
 Connecting Vision and Language Via VLMs
 Vision-Language Models (VLMs) are designed to understand and generate content that combines both visual and textual data. To effectively integrate these two distinct modalities—vision and language—VLMs use specialized mechanisms, such as adapters and linear layers.
 This section details popular building blocks that various VLMs utilize to link visual and language input. Let’s delve into how these components work in the context of VLMs.
 Adapters/MLPs/Fully Connected Layers in VLMs
-Purpose of Adapters: 
-      Adapters are small neural network modules inserted into pre-existing models. In the context of VLMs, they facilitate the integration of visual and textual data by transforming the representations from one modality to be compatible with the other.
+
+# Overview
+Vision-Language Models (VLMs) integrate both visual (image) and textual (language) information processing. They are designed to understand and generate content that involves both images and text, enabling them to perform tasks like image captioning, visual question answering, and text-to-image generation.
+This primer offers an overview of their architecture and how they differ from Large Language Models (LLMs).
+
+
+
+ Adapters are small neural network modules inserted into pre-existing models. In the context of VLMs, they facilitate the integration of visual and textual data by transforming the representations from one modality to be compatible with the other.
 
 Functioning:
-      Adapters typically consist of a few fully connected layers (put simply, a Multi-Layer Perceptron). They take the output from one type of encoder (say, a vision encoder) and transform it into a format that is suitable for processing by another type of encoder or decoder (like a language model).
+
+
+
+Adapters typically consist of a few fully connected layers (put simply, a Multi-Layer Perceptron). They take the output from one type of encoder (say, a vision encoder) and transform it into a format that is suitable for processing by another type of encoder or decoder (like a language model).
+
 
 Role of Linear Layers:
-      Linear layers, or fully connected layers, are a fundamental component in neural networks. In VLMs, they are crucial for processing the output of vision encoders.
+
+
+Linear layers, or fully connected layers, are a fundamental component in neural networks. In VLMs, they are crucial for processing the output of vision encoders.
+
 
 Processing Vision Encoder Output:
-      After an image is processed through a vision encoder (like a CNN or a transformer-based vision model), the resulting feature representation needs to be adapted to be useful for language tasks. Linear layers can transform these vision features into a format that is compatible with the text modality.
+
+
+After an image is processed through a vision encoder (like a CNN or a transformer-based vision model), the resulting feature representation needs to be adapted to be useful for language tasks. Linear layers can transform these vision features into a format that is compatible with the text modality.
+
 
 Combining Modalities: 
-      In a VLM, after processing through adapters and linear layers, the transformed visual data can be combined with textual data. This combination typically occurs before or within the language model, allowing the VLM to generate responses or analyses that incorporate both visual and textual understanding.
+
+
+In a VLM, after processing through adapters and linear layers, the transformed visual data can be combined with textual data. This combination typically occurs before or within the language model, allowing the VLM to generate responses or analyses that incorporate both visual and textual understanding.
+
 
 End-to-End Training: 
-      In some advanced VLMs, the entire model, including vision encoders, linear layers, and language models, can be trained end-to-end. This approach allows the model to better learn how to integrate and interpret both visual and textual information.
 
-Flexibility:
-      Adapters offer flexibility in model training. They allow for fine-tuning a pre-trained model on a specific task without the need to retrain the entire model. This is particularly useful in VLMs where training from scratch is often computationally expensive.
+
+In some advanced VLMs, the entire model, including vision encoders, linear layers, and language models, can be trained end-to-end. This approach allows the model to better learn how to integrate and interpret both visual and textual information.
+
+
+Flexibility: 
+
+
+Adapters offer flexibility in model training. They allow for fine-tuning a pre-trained model on a specific task without the need to retrain the entire model. This is particularly useful in VLMs where training from scratch is often computationally expensive.
 
 In summary, adapters and linear layers in VLMs serve as critical components for bridging the gap between visual and textual modalities, enabling these models to perform tasks that require an understanding of both images and text.
+
+
