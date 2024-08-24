@@ -46,6 +46,32 @@ The image captioner generates synthetic captions for the web images and the filt
 [ Image Captioning using PyTorch and Transformers in Python.](https://thepythoncode.com/article/image-captioning-with-pytorch-and-transformers-in-python)
 
 
+## GIT
+The Generative Image-to-text Transformer (GIT) is another model designed to unify vision-language tasks such as image/video captioning and question answering. It was proposed by a team of researchers at Microsoft. The GIT model is unique in its simplicity, consisting of just one image encoder and one text decoder under a single language modeling task.
+
+The GIT model was trained on a massive dataset of 0.8 billion image-text pairs. This large-scale pre-training data and the model size significantly boost the model's performance. The GIT model has achieved impressive performance on numerous challenging benchmarks, even surpassing human performance on the TextCaps benchmark.
+
+![Iamge](https://thepythoncode.com/media/articles/visual-question-answering-with-transformers-in-python/img006.webp)
+
+Image from the [original GIT paper](https://arxiv.org/abs/2205.14100)
+
+The GIT model consists of an image encoder and a text decoder. 
+
+#### 1.Image encoder: 
+
+It is initialized as a contrastive pre-trained model, which takes a raw image as input and outputs a compact 2D feature map. This feature map is then flattened into a list of features, which are projected into a certain dimension (D) and fed into the text decoder.
+#### 2.Text decoder:
+
+It is a randomly initialized transformer module tasked with predicting the text description. It consists of multiple transformer blocks, each of which is composed of a self-attention layer and a feed-forward layer. The text is tokenized and embedded into D dimensions, followed by the addition of positional encoding and a layer normalization layer. The image features are concatenated with the text embeddings as input to the transformer module. The text begins with a [BOS] token and is decoded in an auto-regressive way until the [EOS] token or the maximum steps are reached.
+The entire model is trained using a language modeling task, where the goal is to predict the next word in a sentence given the previous words. 
+
+An important thing to note is that the attention mask is applied such that the text token only depends on the preceding tokens and all image tokens, and image tokens can attend to each other. This is different from a unidirectional attention mask, where not every image token can rely on all other image tokens.
+
+The above figure also illustrates how the GIT model can be used for VQA from videos as well. To do this, we can first pass the different frames of the video through the image encoder to get the different frame embeddings. Then, we can add the temporal embeddings to the frame embeddings to avoid loss of temporal information and pass the final result to the text decoder. 
+
+
+
+
 ➡️[BLIP-2](https://arxiv.org/abs/2301.12597) also uses pre-trained image and LLM encoders, connected by a Q-Former component. The model is trained for multiple tasks: matching images and text representations with both constrastive learning (like CLIP) and with binary classification task. It is also trained on images caption generation.
 The illustration for this paper will be as ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/73ac1ea8-9778-48e6-8f8d-f0c3516f5afe)
 # Examples of Popular VLMs and Their Architectural Choices
