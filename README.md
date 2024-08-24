@@ -30,6 +30,22 @@ The [CLIP architecture](https://openai.com/research/clip), introduced in 2021, u
 ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/99b19882-8e9f-4ee7-abbf-cdfae495f99c)
 The above diagram represents that examples of visual dialogue from Flamingo paper
 
+## Captioning and Filtering (CapFilt)
+
+![Image](https://thepythoncode.com/media/articles/visual-question-answering-with-transformers-in-python/img002.webp)
+
+__________________________________________Image from the [original BLIP paper.](https://arxiv.org/abs/2201.12086)______________________
+
+Since current models require massive amounts of data, it isn't easy to get high-quality data due to high annotation costs. CapFilt is a new method to improve the quality of the text corpus. It introduces two modules both of which are initialized from the same pre-trained objective and fine-tuned individually on the COCO dataset: 
+
+#### Captioner: 
+It is used to generate captions given the web images. It is an image-grounded text decoder and is fine-tuned with the LM objective to decode texts from given images.
+#### Filter: 
+It is used to remove noisy image-text pairs. The filter is an image-grounded text encoder and is finetuned with the ITC and ITM objectives to learn whether a text matches an image.
+The image captioner generates synthetic captions for the web images and the filter removes noisy texts from both the original web texts and the synthetic texts. A key thing to notice is that the human-labeled captions remain as they are (not filtered) and are assumed to be the ground truth. These filtered image-text pairs along with the human-labeled captions form the new dataset which is then used to pre-train a new model.
+[ Image Captioning using PyTorch and Transformers in Python.](https://thepythoncode.com/article/image-captioning-with-pytorch-and-transformers-in-python)
+
+
 ➡️[BLIP-2](https://arxiv.org/abs/2301.12597) also uses pre-trained image and LLM encoders, connected by a Q-Former component. The model is trained for multiple tasks: matching images and text representations with both constrastive learning (like CLIP) and with binary classification task. It is also trained on images caption generation.
 The illustration for this paper will be as ![image](https://github.com/Pavansomisetty21/Image-Caption-Generation-using-Gemini/assets/110320361/73ac1ea8-9778-48e6-8f8d-f0c3516f5afe)
 # Examples of Popular VLMs and Their Architectural Choices
